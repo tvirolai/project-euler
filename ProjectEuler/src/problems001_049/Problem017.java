@@ -38,9 +38,7 @@ public class Problem017 {
         int letterCount = 0;
         int number = 1;
         while (number <= 1000) {
-            String spelledNumber = spellOut(number);
-            letterCount += spelledNumber.length();
-            System.out.println(spelledNumber);
+            letterCount += spellOut(number).length();
             number++;
         }
         System.out.println("Problem 17: " + letterCount);
