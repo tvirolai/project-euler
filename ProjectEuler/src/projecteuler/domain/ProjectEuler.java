@@ -13,7 +13,7 @@ public class ProjectEuler {
 
     public static void main(String[] args) {
 
-        Problem047 problem = new Problem047();
+        Problem042 problem = new Problem042();
         problem.solve();
     }
     
