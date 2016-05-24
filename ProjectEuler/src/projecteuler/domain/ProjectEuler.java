@@ -8,12 +8,13 @@
 package projecteuler.domain;
 
 import problems001_049.*;
+import problems050_099.*;
 
 public class ProjectEuler {
 
     public static void main(String[] args) {
 
-        Problem049 problem = new Problem049();
+        Problem055 problem = new Problem055();
         problem.solve();
     }
     

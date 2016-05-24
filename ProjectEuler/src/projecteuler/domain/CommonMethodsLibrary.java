@@ -1,6 +1,10 @@
 
 package projecteuler.domain;
 
+import java.math.BigInteger;
+import java.util.HashSet;
+import java.util.Set;
+
 public class CommonMethodsLibrary {
     
     public boolean isPrime(int n) {
@@ -15,4 +19,40 @@ public class CommonMethodsLibrary {
         return true;
     }
     
+    public boolean isPermutation(int a, int b) {
+        return intToSet(a).equals(intToSet(b));
+    }
+    
+    public int reverseInteger(int a) {
+        return Integer.parseInt(new StringBuilder("" + a).reverse().toString());
+    }
+
+    public long reverseLong(long a) {
+        return Long.parseLong(new StringBuilder("" + a).reverse().toString());
+    }
+    
+    public BigInteger reverseBigInt(BigInteger a) {
+        return new BigInteger(new StringBuilder(a.toString()).reverse().toString());
+    }
+    
+    public boolean isPalindromic(int a) {
+        return ("" + a).equals("" + this.reverseInteger(a));
+    }
+
+    public boolean isPalindromic(long a) {
+        return ("" + a).equals("" + this.reverseLong(a));
+    }
+    
+    public boolean isPalindromic(BigInteger a) {
+        return a.toString().equals("" + this.reverseBigInt(a));
+    }
+    
+    private Set<Integer> intToSet(int i) {
+        Set<Integer> set = new HashSet<>();
+        String iString = "" + i;
+        for (int z = 0; z < iString.length(); z++) {
+            set.add(Character.getNumericValue(iString.charAt(z)));
+        }
+        return set;
+    }
 }
