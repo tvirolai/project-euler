@@ -2,6 +2,7 @@
 package projecteuler.domain;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,6 +26,24 @@ public class CommonMethodsLibrary {
     
     public int reverseInteger(int a) {
         return Integer.parseInt(new StringBuilder("" + a).reverse().toString());
+    }
+    
+    public int[] digitsToArray(long a) {
+        String numberString = "" + a;
+        int[] digitArray = new int[numberString.length()];
+        for (int i = 0; i < numberString.length(); i++) {
+            digitArray[i] = Character.getNumericValue(numberString.charAt(i));
+        }
+        return digitArray;      
+    }
+    
+    public ArrayList<Integer> digitsToArrayList(long n) {
+        ArrayList<Integer> digitAL = new ArrayList<>();
+        int[] digitArray = this.digitsToArray(n);
+        for (int i = 0; i < digitArray.length; i++) {
+            digitAL.add(digitArray[i]);
+        }
+        return digitAL;
     }
 
     public long reverseLong(long a) {
