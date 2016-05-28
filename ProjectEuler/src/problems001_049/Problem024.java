@@ -14,7 +14,6 @@
 
 package problems001_049;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import projecteuler.domain.Problem;
 
@@ -22,8 +21,6 @@ public class Problem024 extends Problem {
 
     @Override
     public void solve() {
-        // A wack hack...
-        ArrayList<String> seen = new ArrayList<>();
         int[] digits = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         int i = 1;
         while (true) {
@@ -31,26 +28,12 @@ public class Problem024 extends Problem {
                 System.out.println("Problem 24: " + digitsToString(digits));
                 break;
             }
-            seen.add(digitsToString(digits));
             digits = nextPermutation(digits);
-            if (seen.contains(digitsToString(digits))) {
-                break;
-            }
-            if (seen.size() > 10) {
-                seen.remove(0);
-            }
             i++;
         }
     }
-    
-    public void printArray(int[] digits) {
-        for (int i = 0; i < digits.length; i++) {
-            System.out.print(digits[i] + " ");
-        }
-        System.out.println("");
-    }
-    
-    public String digitsToString(int[] digits) {
+     
+    private String digitsToString(int[] digits) {
         String returnValue = "";
         for (int i = 0; i < digits.length - 1; i++) {
             returnValue += "" + digits[i];
