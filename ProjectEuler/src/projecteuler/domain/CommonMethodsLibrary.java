@@ -3,6 +3,7 @@ package projecteuler.domain;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -73,5 +74,46 @@ public class CommonMethodsLibrary {
             set.add(Character.getNumericValue(iString.charAt(z)));
         }
         return set;
+    }
+    
+    public long getSumOfProperDivisors(long x) {
+        return (long) getDivisors(x).stream().mapToLong(i -> (i)).sum();
+    }
+
+    public int getSumOfProperDivisors(int x) {
+        return (int) getSumOfProperDivisors((long) x);
+    }
+    
+    public ArrayList<Long> getDivisors(long x) {
+        ArrayList<Long> smallFactors = new ArrayList<>();
+        ArrayList<Long> factors = new ArrayList<>();
+        for (int i = 1; i < Math.sqrt(x) + 1; i++) {
+            if (x % i == 0) {
+                smallFactors.add((long) i);
+                factors.add((long) i);
+            }
+        }
+        smallFactors.stream().forEach((z) -> {
+            if (z > 1) {
+               factors.add(x / z); 
+            }
+        });
+       
+        Collections.sort(factors);
+        return factors;
+    }
+    
+    public boolean isNDigitPanDigital(int n) {
+        String nString = "" + n;
+        String numbers = "123456789".substring(0, nString.length());
+        String seen = "";
+        for (int i = 0; i < nString.length(); i++) {
+            String current = "" + nString.charAt(i);
+            if (seen.contains(current) || !numbers.contains(current)) {
+                return false;
+            }
+            seen += current;
+        }
+        return true;
     }
 }
