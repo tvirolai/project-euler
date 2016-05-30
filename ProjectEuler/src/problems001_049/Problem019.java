@@ -1,6 +1,5 @@
 /*
  * Project Euler (http://projecteuler.net) problem 19: Counting Sundays
- * number
  * 
  * You are given the following information, but you may prefer to do some 
  * research for yourself.
