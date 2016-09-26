@@ -116,4 +116,22 @@ public class CommonMethodsLibrary {
         }
         return true;
     }
+    
+    public ArrayList<Integer> allRotationsOfANumber(int n) {
+        ArrayList<Integer> rotations = new ArrayList<>();
+        rotations.add(n);
+        String nString = "" + n;
+        if (nString.length() > 1) {
+            int i = 1;
+            while (i < nString.length()) {
+                String first = nString.substring(i);
+                String last = nString.substring(0, i);
+                String rotation = nString.substring(i) + nString.substring(0, i);
+                rotations.add(Integer.parseInt(rotation));
+                i++;
+            }
+            
+        }
+        return rotations;
+    }
 }
