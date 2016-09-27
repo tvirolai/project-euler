@@ -140,4 +140,12 @@ public class CommonMethodsLibrary {
         }
         return rotations;
     }
+    
+    public long factorial(int i) {
+        long result = i;
+        while (i > 1) {
+            result = result * --i;
+        }
+        return (i == 0) ? 1 : result;
+    }
 }
