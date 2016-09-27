@@ -16,16 +16,9 @@ package problems001_049;
 
 import java.util.Set;
 import java.util.HashSet;
-import projecteuler.domain.CommonMethodsLibrary;
 import projecteuler.domain.Problem;
 
 public class Problem049 extends Problem {
-    
-    private final CommonMethodsLibrary methods;
-    
-    public Problem049() {
-        this.methods = new CommonMethodsLibrary();
-    }
 
     @Override
     public void solve() {

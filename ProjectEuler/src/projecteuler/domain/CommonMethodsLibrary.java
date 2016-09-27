@@ -105,6 +105,12 @@ public class CommonMethodsLibrary {
     
     public boolean isNDigitPanDigital(int n) {
         String nString = "" + n;
+        return isNDigitPanDigital(nString);
+    }
+
+    
+    public boolean isNDigitPanDigital(String n) {
+        String nString = "" + n;
         String numbers = "123456789".substring(0, nString.length());
         String seen = "";
         for (int i = 0; i < nString.length(); i++) {
