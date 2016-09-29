@@ -2,4 +2,4 @@
 
 Solutions for mathematical programming puzzles from Project Euler (https://projecteuler.net/).
 
-Currently solved 41 exercises.
+Currently solved 42 exercises.
